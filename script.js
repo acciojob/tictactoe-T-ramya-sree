@@ -17,8 +17,8 @@ const winningCombinations = [
    [2, 4, 6]
 ];
 submitBtn.addEventListener("click", () => {
-   player1 = document.getElementById("player-1").value;
-   player2 = document.getElementById("player-2").value;
+   player1 = document.getElementById("player1").value;
+   player2 = document.getElementById("player2").value;
    if (player1 === "" || player2 === "") return;
    document.getElementById("start-screen").style.display = "none";
    document.getElementById("game-screen").style.display = "block";
@@ -32,17 +32,17 @@ cells.forEach(cell => {
        cell.textContent = currentPlayer;
        if (checkWinner()) {
            const winner =
-               currentPlayer === "X" ? player1 : player2;
+               currentPlayer === "x" ? player1 : player2;
            message.textContent =
                `${winner}, congratulations you won!`;
            gameOver = true;
            return;
        }
-       if (currentPlayer === "X") {
-           currentPlayer = "O";
+       if (currentPlayer === "x") {
+           currentPlayer = "o";
            message.textContent = `${player2}, you're up`;
        } else {
-           currentPlayer = "X";
+           currentPlayer = "x";
            message.textContent = `${player1}, you're up`;
        }
    });
